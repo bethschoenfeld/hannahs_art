@@ -1,14 +1,47 @@
 const { Schema } = require('mongoose')
 
+const ProductSchema = new Schema ({
+    artwork: {
+        type: String,
+        required: true
+    }
+    
+},
+{
+    timestamps: {}
+}
+
+)
+
+const TransactionSchema = new Schema({
+    items:{
+        type: String,
+        required: true, 
+    }
+},
+{
+    timestamps: {}
+}
+)
+
 const UserSchema = new Schema({
     username: {
         type: String,
-        required: false,
+        required: true,
         default: 'Shopper'
     },
 
-}, { timestamps: {} })
+    transactions: [TransactionSchema]
+
+},
+{ 
+    timestamps: {} 
+}
+)
 
 module.exports = {
     UserSchema
+    TransactionSchema
+    ProductsSchema
+
 }
