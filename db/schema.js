@@ -14,7 +14,7 @@ const ProductSchema = new Schema ({
 )
 
 const TransactionSchema = new Schema({
-    items:{
+    items: {
         type: String,
         required: true, 
     }
@@ -40,8 +40,8 @@ const UserSchema = new Schema({
 )
 
 module.exports = {
-    UserSchema
-    TransactionSchema
-    ProductsSchema
+    UserSchema,
+    TransactionSchema,
+    ProductSchema
 
 }
