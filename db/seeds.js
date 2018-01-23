@@ -4,11 +4,17 @@ const mongoose = require('mongoose')
 mongoose.connect(process.env.MONGODB_URI)
 
 const User = require('./models/User.js')
+const Transaction = require('./models/Transaction.js')
+const Product = require('./models/Product.js')
 
-const shopper = new User({ name: 'Shopper' })
 
 User
     .remove({})
-    .then(() => shopper.save())
-    .then(() => console.log('Successful Save!!!'))
-    .then(() => mongoose.connection.close())
+    .then(() => user.save())
+    .catch((error) => {
+        console.log('Error saving seeded data!')
+    })
+    .then(() => {
+        mongoose.connection.close()
+    console.log('Successful Save!!!')
+})
