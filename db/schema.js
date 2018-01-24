@@ -31,7 +31,7 @@ const UserSchema = new Schema({
         default: 'Shopper'
     },
 
-    transactions: [TransactionSchema]
+    transaction: [TransactionSchema]
 
 },
 { 
