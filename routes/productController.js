@@ -22,7 +22,7 @@ router.post('/', async (req, res) => {
     }
 })
 
-router.delete('/:userId', async (req, res) => {
+router.delete('/:productId', async (req, res) => {
     try {
         await Product.findByIdeAndRemove(req.params.productId)
         res.sendStatus(200)
@@ -32,7 +32,7 @@ router.delete('/:userId', async (req, res) => {
     }
 })
 
-router.patch('/:userId', async (req, res) => {
+router.patch('/:productId', async (req, res) => {
     try {
         const updatedProduct = await Product.findByIdeAndUpdate(req.params.productId, req.body, { new: true })
         res.json(updateProduct)
