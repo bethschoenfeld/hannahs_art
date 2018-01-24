@@ -14,10 +14,9 @@ class User extends Component {
             <div>
                 <div>
                 {this.state.users.map((user, i) => {
-                        console.log(user)
                         return (
                             <div key={i}>
-                                <p>{`${user.username}`}</p>
+                                <p>{user.username}</p>
                             </div>
                         )
                     })}
