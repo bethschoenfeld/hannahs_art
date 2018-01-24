@@ -1,4 +1,4 @@
-import React, {Components} from 'react'
+import React, {Component} from 'react'
 
 class Product extends Component {
     deleteProduct = () => {
@@ -26,3 +26,4 @@ class Product extends Component {
     }
     
 }
+export default Product

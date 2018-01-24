@@ -3,7 +3,7 @@ import axios from 'axios'
 import styled from 'styled-components'
 
 const UserWrapper = styled.div`
-    border: 1px solid cyan;
+    border: 4px solid cyan;
 `
 
 class User extends Component {

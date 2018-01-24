@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import UserList from './UserList.js'
 
 const UserPageWrapper = styled.div`
-    border: 1px solid blue;
+    border: 4px solid blue;
 `
 
 class UserPage extends Component {
