@@ -26,8 +26,17 @@ User.remove({})
             items: 'Painting',
         })
         beth.transaction.push(painting)
-
         return beth.save()
+            .then(() => {
+                const josh = new User({
+                    username: "Josh"
+                })
+                const vase = new Transaction({
+                    items: "Vase"
+                })
+                josh.transaction.push(vase)
+                return josh.save()
+            })
     }).catch((error) => {
         console.log('Error saving seeded data!')
         console.log(error)
