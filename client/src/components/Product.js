@@ -20,6 +20,7 @@ class Product extends Component {
 
         return (
         <div className="product-display">
+        
         <h3>{productName}</h3>
         </div>
         )
