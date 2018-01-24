@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
-import User from './User'
+import UserPage from './UserPage'
+import styled from 'styled-components'
+
+const AppWrapper = styled.div`
+border: solid red 1px;`
+
 class App extends Component {
   render() {
     return (
-      <div>
-        <p>I'm an app!</p>
-        <User />
-      </div>
+      <AppWrapper>
+        <p>I'm the app Component!</p>
+        <UserPage />
+      </AppWrapper>
     );
   }
 }

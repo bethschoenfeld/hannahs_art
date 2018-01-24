@@ -19,14 +19,13 @@ mongoose.connection.on('error', (error) => {
 
 User.remove({})
     .then(() => {
-        const beth = new User({
-            username: 'Beth',
-        })
         const painting = new Transaction({
             items: 'Painting',
         })
         beth.transaction.push(painting)
+
         return beth.save()
+
             .then(() => {
                 const josh = new User({
                     username: "Josh"
@@ -35,6 +34,7 @@ User.remove({})
                     items: "Vase"
                 })
                 josh.transaction.push(vase)
+
                 return josh.save()
             })
     }).catch((error) => {

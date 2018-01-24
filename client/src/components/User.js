@@ -1,5 +1,10 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import styled from 'styled-components'
+
+const UserWrapper = styled.div`
+    border: 1px solid cyan;
+`
 
 class User extends Component {
     state = {
@@ -11,7 +16,8 @@ class User extends Component {
     }
     render() {
         return (
-            <div>
+            <UserWrapper>
+                User Component
                 <div>
                 {this.state.users.map((user, i) => {
                         return (
@@ -21,7 +27,7 @@ class User extends Component {
                         )
                     })}
                 </div>
-            </div>
+            </UserWrapper>
         )
     }
 }
