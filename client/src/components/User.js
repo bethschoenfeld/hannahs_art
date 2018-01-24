@@ -19,10 +19,10 @@ class User extends Component {
             <UserWrapper>
                 User Component
                 <div>
-                {this.state.users.map((user, i) => {
+                {this.state.users.map((users, i) => {
                         return (
                             <div key={i}>
-                                <p>{user.username}</p>
+                                <p>{users.username}</p>
                             </div>
                         )
                     })}
