@@ -1,34 +1,26 @@
-import React, { Component } from 'react'
-import axios from 'axios'
+import React from 'react'
 import styled from 'styled-components'
 
 const UserWrapper = styled.div`
-    border: 4px solid cyan;
+   border: 4px solid cyan;
 `
 
-class User extends Component {
-    state = {
-        users: []
-    }
-    async componentWillMount() {
-        const response = await axios.get('/api/users')
-        this.setState({ users: response.data })
-    }
-    render() {
-        return (
-            <UserWrapper>
-                User Component
-                {/* <div>
-                {this.state.users.map((users, i) => {
-                        return (
-                            <div key={i}>
-                                <p>{users.username}</p>
-                            </div>
-                        )
-                    })}
-                </div> */}
-            </UserWrapper>
-        )
-    }
+const User = (props) => {
+   return (
+      <UserWrapper>
+         User Component
+            <div>
+            <input type="text"
+               name="username"
+               value={props.user.username}
+               onChange={(event) => props.handleChange(props.user, event)}
+               onBlur={() => { props.updateUser(props.user) }} />
+
+            <button onClick={() => { props.deleteUser(props.user) }}>
+               Delete User
+               </button>
+         </div>
+      </UserWrapper>
+   )
 }
 export default User

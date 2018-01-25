@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import User from './User'
 
@@ -6,25 +6,18 @@ const UserListWrapper = styled.div`
 border: solid green 4px;
 `
 
-class UserList extends Component {
-    render() {
-        return (
-            <UserListWrapper>
-                UserList Component
-                <User />
-                <div>
-                    {this.state.users.map((users, i) => {
-                        return (
-                            <div key={i}>
-                                <p>{users.username}</p>
-                            </div>
-                        )
-                    })}
-                </div>
-
-            </UserListWrapper>
-        )
-    }
+const UserList = (props) => {
+    return (
+        <UserListWrapper>
+            UserList Component
+            {props.users.map((user, i) => {
+                return (
+                    <User user={user} {...props} key={user._id} />
+                )
+            })}
+        </UserListWrapper>
+    )
 }
+
 
 export default UserList

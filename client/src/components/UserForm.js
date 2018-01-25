@@ -1,22 +1,19 @@
 import React, { Component } from 'react'
 
 class UserForm extends Component {
-    constructor () {
-        super()
-
-        this.state = {
-            newUser: {}
-        }
+    
+    state = {
+        newUser: {}
     }
 
-    handleNewUserChange = (event) => {
+    handleNewUserChange = (user, event) => {
         const attributeName = event.target.attributeName
         const attributeValue = event.target.attributeValue
 
-        const newUser = { ...this.state.newUser}
+        const newUser = { ...this.state.newUser }
         newUser[attributeName] = attributeValue
 
-        this.setState({newUser})
+        this.setState({ newUser })
     };
 
     addNewUser = (event) => {
@@ -26,11 +23,15 @@ class UserForm extends Component {
     };
 
     render() {
-        return ( 
+        return (
             <div>
                 <form onSubmit={this.addNewUser}>
-                    <div><input name="userName" type="text" placeholder="Name" onChange={this.handleNewUserChange}/></div>
-                    <div><input type="submit" value="Create New User"/></div>
+                    <div>
+                        <input name="userName" type="text" placeholder="Name" onChange={this.handleNewUserChange} />
+                    </div>
+                    <div>
+                        <input type="submit" value="Create New User" />
+                    </div>
                 </form>
             </div>
         )
