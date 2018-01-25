@@ -1,11 +1,11 @@
 const express = require('express')
-const Product= require('../db/models/Product')
+const Artwork= require('../db/models/Artwork')
 const router = express.Router()
 
 router.get('/', async (req, res) => {
     try {
-        const product = await Product.find({})
-        res.json(product)
+        const artwork = await Artwork.find({})
+        res.json(artwork)
     } catch (err) {
         console.log(err)
         res.sendStatus(500)
@@ -14,17 +14,17 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
-        const newProduct = await Product.create({})
-        res.json(newProduct)
+        const newArtwork = await Artwork.create({})
+        res.json(newArtwork)
     } catch (err) {
         console.log(err)
         res.sendStatus(500)
     }
 })
 
-router.delete('/:productId', async (req, res) => {
+router.delete('/:artworkId', async (req, res) => {
     try {
-        await Product.findByIdeAndRemove(req.params.productId)
+        await Artwork.findByIdeAndRemove(req.params.artworkId)
         res.sendStatus(200)
     } catch (err) {
         console.log(err)
@@ -32,10 +32,10 @@ router.delete('/:productId', async (req, res) => {
     }
 })
 
-router.patch('/:productId', async (req, res) => {
+router.patch('/:artworkId', async (req, res) => {
     try {
-        const updatedProduct = await Product.findByIdeAndUpdate(req.params.productId, req.body, { new: true })
-        res.json(updateProduct)
+        const updatedArtwork = await Artwork.findByIdeAndUpdate(req.params.artworkId, req.body, { new: true })
+        res.json(updateArtwork)
     } catch (err) {
         console.log(err)
         res.sendStatus(500)

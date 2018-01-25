@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
-const { ProductSchema } = require('../schema')
+const { ArtworkSchema } = require('../schema')
 
-const Product = mongoose.model('Product', ProductSchema)
+const Artwork = mongoose.model('Artwork', ArtworkSchema)
 
-module.exports = Product
+module.exports = Artwork

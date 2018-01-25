@@ -1,10 +1,11 @@
 const { Schema } = require('mongoose')
 
-const ProductSchema = new Schema ({
+const ArtworkSchema = new Schema ({
     artwork: {
         type: String,
         required: true
-    }
+    },
+
     
 },
 {
@@ -13,11 +14,13 @@ const ProductSchema = new Schema ({
 
 )
 
-const TransactionSchema = new Schema({
+const ContactSchema = new Schema({
     items: {
         type: String,
         required: true, 
-    }
+    },
+
+    artwork: [ArtworkSchema]
 },
 {
     timestamps: {}
@@ -28,10 +31,10 @@ const UserSchema = new Schema({
     username: {
         type: String,
         required: true,
-        default: 'Shopper'
+        default: 'Artist'
     },
 
-    transaction: [TransactionSchema]
+    contact: [ContactSchema]
 
 },
 { 
@@ -41,7 +44,7 @@ const UserSchema = new Schema({
 
 module.exports = {
     UserSchema,
-    TransactionSchema,
-    ProductSchema
+    ContactSchema,
+    ArtworkSchema
 
 }

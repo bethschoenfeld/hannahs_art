@@ -5,21 +5,24 @@ import styled from 'styled-components'
 
 const AppWrapper = styled.div`
 border: solid red 1px;
-font-family: Raleway;
 display: flex;
 flex-direction: column;
 justify-content: center;
+background: transparent;
+/* background-image: url("https://i.imgur.com/ERvObEY.png"); */
 h1{
-  align-content: center;
+  margin: 0 auto;
+  font-family: 'Raleway', serif;
+  color: #333333;
 }
+
 `
 
 class App extends Component {
   render() {
     return (
       <AppWrapper>
-        <h1>Hannah White</h1>
-        <h2>-Visual Artist-</h2>
+        <h1>Artist Page</h1>
         <UserPage />
       </AppWrapper>
     );

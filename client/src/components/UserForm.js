@@ -6,9 +6,9 @@ class UserForm extends Component {
         newUser: {}
     }
 
-    handleNewUserChange = (user, event) => {
-        const attributeName = event.target.attributeName
-        const attributeValue = event.target.attributeValue
+    handleNewUserChange = (event) => {
+        const attributeName = event.target.name
+        const attributeValue = event.target.value
 
         const newUser = { ...this.state.newUser }
         newUser[attributeName] = attributeValue
@@ -16,10 +16,10 @@ class UserForm extends Component {
         this.setState({ newUser })
     };
 
-    addNewUser = (event) => {
+    addNewUser = (event, props) => {
         event.preventDefault()
 
-        this.props.addNewUserToProductList(this.state.newUser)
+        this.props.createUser(this.state.newUser)
     };
 
     render() {

@@ -61,13 +61,14 @@ class UserPage extends Component {
         return (
             <UserPageWrapper>
                 UserPage Component
-            <button onClick={this.createUser}>New User</button>
+            {/* <button onClick={this.createUser}>New User</button> */}
                 <UserList users={this.state.users}
                     handleChange={this.handleChange}
                     updateUser={this.updateUser}
                     deleteUser={this.deleteUser}
                 />
-                <UserForm />
+                <UserForm createUser={this.createUser}
+                />
             </UserPageWrapper >
         )
     }

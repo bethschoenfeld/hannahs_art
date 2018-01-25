@@ -2,7 +2,7 @@ require('dotenv').config()
 
 const User = require('./models/User.js')
 const Transaction = require('./models/Transaction.js')
-const Product = require('./models/Product.js')
+const Artowrk = require('./models/Artowrk.js')
 
 const mongoose = require('mongoose')
 mongoose.connect(process.env.MONGODB_URI)
@@ -19,7 +19,7 @@ mongoose.connection.on('error', (error) => {
 
 User.remove({})
     .then(() => {
-        const painting = new Transaction({
+        const painting = new Artwork({
             items: 'Painting',
         })
         beth.transaction.push(painting)
@@ -30,7 +30,7 @@ User.remove({})
                 const josh = new User({
                     username: "Josh"
                 })
-                const vase = new Transaction({
+                const vase = new Artwork({
                     items: "Vase"
                 })
                 josh.transaction.push(vase)
