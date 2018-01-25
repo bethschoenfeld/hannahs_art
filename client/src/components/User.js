@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const UserWrapper = styled.div`
-   border: 4px solid cyan;
+   border: 1px solid cyan;
 `
 
 const User = (props) => {

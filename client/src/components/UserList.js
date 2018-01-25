@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import User from './User'
 
 const UserListWrapper = styled.div`
-border: solid green 4px;
+border: solid green 1px;
 `
 
 const UserList = (props) => {

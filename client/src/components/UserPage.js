@@ -5,7 +5,7 @@ import UserForm from './UserForm.js'
 import axios from 'axios'
 
 const UserPageWrapper = styled.div`
-    border: 4px solid blue;
+    border: 1px solid blue;
 `
 
 class UserPage extends Component {
