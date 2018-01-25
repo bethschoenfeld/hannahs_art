@@ -18,7 +18,7 @@ class User extends Component {
         return (
             <UserWrapper>
                 User Component
-                <div>
+                {/* <div>
                 {this.state.users.map((users, i) => {
                         return (
                             <div key={i}>
@@ -26,7 +26,7 @@ class User extends Component {
                             </div>
                         )
                     })}
-                </div>
+                </div> */}
             </UserWrapper>
         )
     }

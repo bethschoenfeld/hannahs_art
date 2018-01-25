@@ -12,6 +12,16 @@ class UserList extends Component {
             <UserListWrapper>
                 UserList Component
                 <User />
+                <div>
+                    {this.state.users.map((users, i) => {
+                        return (
+                            <div key={i}>
+                                <p>{users.username}</p>
+                            </div>
+                        )
+                    })}
+                </div>
+
             </UserListWrapper>
         )
     }
