@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 
 
+import Home from './Home'
 import UserPage from './UserPage'
+import UserList from './UserList'
 import Artwork from './Artwork'
 import styled from 'styled-components'
 import { userInfo } from 'os';
@@ -31,7 +33,9 @@ class App extends Component {
         <h1>Artist Page</h1>
         <UserPage />
       <Switch>
+        <Route exact path="/" component={Home}/>
         <Route exact path="/users" component={UserPage}/>
+        <Route exact path="/user/:userId" component={UserList}/>
       </Switch>
       </AppWrapper>
       </Router>
