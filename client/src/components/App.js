@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
+import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
+
+
 import UserPage from './UserPage'
 import Artwork from './Artwork'
 import styled from 'styled-components'
+import { userInfo } from 'os';
+import axios from 'axios';
 
 const AppWrapper = styled.div`
 border: solid red 1px;
@@ -21,10 +26,15 @@ h1{
 class App extends Component {
   render() {
     return (
+      <Router>
       <AppWrapper>
         <h1>Artist Page</h1>
         <UserPage />
       </AppWrapper>
+      <Switch>
+        <Route exact path="/user" component={UserPage}/>
+      </Switch>
+      </Router>
     );
   }
 }
