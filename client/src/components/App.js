@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import UserPage from './UserPage'
-// import Product from './Product'
+import Artwork from './Artwork'
 import styled from 'styled-components'
 
 const AppWrapper = styled.div`

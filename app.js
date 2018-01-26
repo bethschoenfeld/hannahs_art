@@ -44,8 +44,8 @@ app.use(express.static(path.join(__dirname, 'public')))
 const userController = require('./routes/userController.js')
 app.use('/api/users', userController)
 
-const productController = require('./routes/productController.js')
-app.use('/api/product', productController)
+const artworkController = require('./routes/artworkController.js')
+app.use('/api/artwork', artworkController)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

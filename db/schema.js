@@ -15,9 +15,17 @@ const ArtworkSchema = new Schema ({
 )
 
 const ContactSchema = new Schema({
-    items: {
+    email: {
         type: String,
         required: true, 
+    },
+    instagram: {
+        type: String,
+        required: false,
+    },
+    website: {
+        type: String,
+        required: true,
     },
 
     artwork: [ArtworkSchema]
