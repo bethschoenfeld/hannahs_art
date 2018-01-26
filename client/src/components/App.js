@@ -30,10 +30,10 @@ class App extends Component {
       <AppWrapper>
         <h1>Artist Page</h1>
         <UserPage />
-      </AppWrapper>
       <Switch>
-        <Route exact path="/user" component={UserPage}/>
+        <Route exact path="/users" component={UserPage}/>
       </Switch>
+      </AppWrapper>
       </Router>
     );
   }
