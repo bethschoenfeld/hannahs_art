@@ -12,7 +12,6 @@ const UserList = (props) => {
             UserList Component
             {props.users.map((user, i) => {
                 return (
-                    
                     <User user={user} {...props} key={i} />
                 )
             })}

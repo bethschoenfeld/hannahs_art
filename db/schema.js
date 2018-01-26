@@ -5,19 +5,16 @@ const ArtworkSchema = new Schema ({
         type: String,
         required: true
     },
-
-    
 },
 {
     timestamps: {}
 }
-
 )
 
 const ContactSchema = new Schema({
     email: {
         type: String,
-        required: true, 
+        required: false, 
     },
     instagram: {
         type: String,

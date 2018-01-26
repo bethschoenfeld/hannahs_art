@@ -1,7 +1,7 @@
 require('dotenv').config()
 
 const User = require('./models/User.js')
-const artwork = require('./models/artwork.js')
+const Contact = require('./models/Contact.js')
 const Artwork = require('./models/Artwork.js')
 
 const mongoose = require('mongoose')
@@ -19,23 +19,39 @@ mongoose.connection.on('error', (error) => {
 
 User.remove({})
     .then(() => {
-        const painting = new Artwork({
-            items: 'Painting',
+        const hannah = new User({
+            username: 'Hannah',
         })
-        beth.artwork.push(painting)
+        const hannahContactInfo = new Contact({
+            email: 'hannahwhite@gmail.com',
+            instagram: '@hannahwhite_visualartist',
+            website: 'hannahwhitevisualartist.com'
 
-        return beth.save()
+        })
+        const hannahPainting = new Artwork({
+            artwork: 'https://i.imgur.com/i6ws4Yx.png'
+        })
+        hannahContactInfo.artwork.push(hannahPainting)
+        hannah.contact.push(hannahContactInfo)
+        return hannah.save()
 
             .then(() => {
-                const josh = new User({
-                    username: "Josh"
+                const juniper = new User({
+                    username: 'Juniper',
                 })
-                const vase = new Artwork({
-                    items: "Vase"
+                const juniperContactInfo = new Contact({
+                    instagram: '@juniperfoxx',
+                    website: 'https://www.juniperfoxx.com/'
                 })
-                josh.artwork.push(vase)
+                const juniperPicture = new Artwork({
+                    artwork: 'https://i.imgur.com/aFdnMpW.jpg'
+                })
 
-                return josh.save()
+                juniperContactInfo.artwork.push(juniperPicture)
+                juniper.contact.push(juniperContactInfo)
+
+                return juniper.save()
+
             })
     }).catch((error) => {
         console.log('Error saving seeded data!')

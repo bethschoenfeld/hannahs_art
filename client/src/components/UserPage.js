@@ -22,7 +22,7 @@ class UserPage extends Component {
     }
 
     createUser = async () => {
-        const response = await axios.post(`/api/user`)
+        const response = await axios.post(`/api/users`)
         const newUser = response.data
 
         const newUsers = [...this.state.users]
