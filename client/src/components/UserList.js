@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import {Link} from 'react-router-dom'
 
 const UserListWrapper = styled.div`
 border: solid green 1px;
@@ -15,8 +16,10 @@ const UserList = (props) => {
             {props.users.map((user, i) => {
                 return (
                     <UserWrapper>
-
-                            <input key={i} type="text"
+                        <a href={user._id}>
+                            {user.username}
+                        </a>
+                            {/* <input key={i} type="text"
                             name="username"
                             value={user.username}
                             onChange={(event) => props.handleChange(props.user, event)}
@@ -26,7 +29,7 @@ const UserList = (props) => {
                             </button>
                             <button onClick={()=> { props.editUser(props.user)}}>
                             Edit User
-                            </button>
+                            </button> */}
                     </UserWrapper>
                 )
             })}

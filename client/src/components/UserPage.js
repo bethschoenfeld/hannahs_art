@@ -5,7 +5,16 @@ import UserForm from './UserForm.js'
 import axios from 'axios'
 
 const UserPageWrapper = styled.div`
-    border: 1px solid blue;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+border: 1px solid blue;
+height: 100vh;
+
+h1{ 
+font-family: 'Raleway', serif;
+}
 `
 
 class UserPage extends Component {

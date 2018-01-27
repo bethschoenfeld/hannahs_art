@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import Home from './Home'
 import UserPage from './UserPage'
 import UserList from './UserList'
+import UserContact from './UserContact'
 import Artwork from './Artwork'
 import styled from 'styled-components'
 import { userInfo } from 'os';
