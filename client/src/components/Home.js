@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import UserPage from './UserPage'
-import { Redirect } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
 const HomePageWrapper = styled.div`
 display: flex;
@@ -19,9 +19,11 @@ class Home extends Component {
             <HomePageWrapper>
                 <div>
                     <h1>Welome!</h1>
-                    <button onClick={this.UserPage}>
+                    <Route render={({history}) => (
+                    <button type='button' onClick={() => { history.push('/users') }}>
                     Enter Site
                     </button>
+                    )} />
                 </div>
             </HomePageWrapper>
         )

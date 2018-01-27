@@ -24,7 +24,7 @@ const UserList = (props) => {
                         <button onClick={() => { props.deleteUser(props.user) }}>
                             Delete User
                             </button>
-                            <button onClick={()=> { props.editUser(props.user )}}>
+                            <button onClick={()=> { props.editUser(props.user)}}>
                             Edit User
                             </button>
                     </UserWrapper>
