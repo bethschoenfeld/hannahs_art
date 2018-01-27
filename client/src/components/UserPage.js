@@ -60,8 +60,7 @@ class UserPage extends Component {
     render() {
         return (
             <UserPageWrapper>
-                UserPage Component
-            {/* <button onClick={this.createUser}>New User</button> */}
+                <h1>Artist Page</h1>
                 <UserList users={this.state.users}
                     handleChange={this.handleChange}
                     updateUser={this.updateUser}

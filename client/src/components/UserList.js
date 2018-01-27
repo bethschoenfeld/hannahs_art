@@ -1,9 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import User from './User'
 
 const UserListWrapper = styled.div`
 border: solid green 1px;
+`
+const UserWrapper = styled.div`
+border: 1px solid cyan;
 `
 
 const UserList = (props) => {
@@ -12,12 +14,26 @@ const UserList = (props) => {
             UserList Component
             {props.users.map((user, i) => {
                 return (
-                    <User user={user} {...props} key={i} />
+                    <UserWrapper>
+
+                            <input key={i} type="text"
+                            name="username"
+                            value={user.username}
+                            onChange={(event) => props.handleChange(props.user, event)}
+                            onBlur={() => { props.updateUser(props.user) }} />
+                        <button onClick={() => { props.deleteUser(props.user) }}>
+                            Delete User
+                            </button>
+                            <button onClick={()=> { props.editUser(props.user )}}>
+                            Edit User
+                            </button>
+                    </UserWrapper>
                 )
             })}
+
         </UserListWrapper>
     )
 }
 
 
-export default UserList
+export default UserList;
