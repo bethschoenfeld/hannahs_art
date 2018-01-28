@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { Route } from 'react-router-dom'
+import {connect} from 'react-redux'
+import {push} from 'react-router-redux'
 
 const HomePageWrapper = styled.div`
     display: flex;
@@ -30,14 +31,12 @@ class Home extends Component {
       <HomePageWrapper>
         <div>
           <h1>Welcome!</h1>
-          <Route render={({ history }) => (
-            <button type='button' onClick={() => { history.push('/users') }}>
+            <button type='button' onClick={() => this.props.push('/users')} >
               Enter Site
             </button>
-          )} />
         </div>
       </HomePageWrapper>
     )
   }
 }
-export default Home
+export default connect(null, {push})(Home)
