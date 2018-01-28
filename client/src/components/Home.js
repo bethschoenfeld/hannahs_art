@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import UserPage from './UserPage'
 import { Route } from 'react-router-dom'
 
 const HomePageWrapper = styled.div`

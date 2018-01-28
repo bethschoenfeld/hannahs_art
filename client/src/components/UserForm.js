@@ -25,14 +25,14 @@ class UserForm extends Component {
     render() {
         return (
             <div>
-                {/* <form onSubmit={this.addNewUser}>
+                <form onSubmit={this.addNewUser}>
                     <div>
                         <input name="userName" type="text" placeholder="Name" onChange={this.handleNewUserChange} />
                     </div>
                     <div>
                         <input type="submit" value="Create New User" />
                     </div>
-                </form> */}
+                </form>
             </div>
         )
     }

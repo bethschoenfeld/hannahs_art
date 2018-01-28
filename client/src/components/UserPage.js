@@ -15,6 +15,12 @@ height: 100vh;
 h1{ 
 font-family: 'Raleway', serif;
 }
+
+/* {
+    background-color: #e7e7e7;
+    color: black;
+    border: 2px solid #e7e7e7;
+} */
 `
 
 class UserPage extends Component {
