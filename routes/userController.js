@@ -1,6 +1,6 @@
 const express = require('express')
 const User = require('../db/models/User')
-const router = express.Router()
+const router = express.Router({ mergeParams: true })
 
 router.get('/', async (req, res) => {
     try {
@@ -14,32 +14,33 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
-        const newUser = await User.create({})
+        const newUser = await User.create(req.body)
         res.json(newUser)
+        console.log(newUser)
     } catch (err) {
         console.log(err)
         res.sendStatus(500)
     }
 })
 
-router.delete('/:userId', async (req, res) => {
-    try {
-        await User.findByIdeAndRemove(req.params.userId)
-        res.sendStatus(200)
-    } catch (err) {
-        console.log(err)
-        res.sendStatus(500)
-    }
-})
+// router.delete('/:userId', async (req, res) => {
+//     try {
+//         await User.findByIdeAndRemove(req.params.userId)
+//         res.sendStatus(200)
+//     } catch (err) {
+//         console.log(err)
+//         res.sendStatus(500)
+//     }
+// })
 
-router.patch('/:userId', async (req, res) => {
-    try {
-        const updatedIdea = await User.findByIdeAndUpdate(req.params.userId, req.body, { new: true })
-        res.json(updateIdea)
-    } catch (err) {
-        console.log(err)
-        res.sendStatus(500)
-    }
-})
+// router.patch('/:userId', async (req, res) => {
+//     try {
+//         const updatedIdea = await User.findByIdeAndUpdate(req.params.userId, req.body, { new: true })
+//         res.json(updateIdea)
+//     } catch (err) {
+//         console.log(err)
+//         res.sendStatus(500)
+//     }
+// })
 
 module.exports = router

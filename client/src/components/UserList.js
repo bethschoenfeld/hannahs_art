@@ -20,11 +20,11 @@ const UserList = (props) => {
         < UserListWrapper >
         {props.users.map((user, i) => {
             return (
-                    <UserWrapper>
+                    <UserWrapper key={i}>
                         <p  value={user._id}>
                             {user.username}
                         </p>
-                        <input key={i} type="text"
+                        <input type="text"
                             name="username"
                             value={user.username}
                             onChange={(event) => props.handleChange(props.user, event)}

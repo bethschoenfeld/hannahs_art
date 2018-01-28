@@ -3,7 +3,9 @@ import React, { Component } from 'react'
 class UserForm extends Component {
     
     state = {
-        newUser: {}
+        newUser: {
+            username: 'Orange'
+        }
     }
 
     handleNewUserChange = (event) => {
@@ -18,8 +20,10 @@ class UserForm extends Component {
 
     addNewUser = (event, props) => {
         event.preventDefault()
-
         this.props.createUser(this.state.newUser)
+        this.setState({
+            newUser: {}
+        })
     };
 
     render() {
@@ -27,7 +31,7 @@ class UserForm extends Component {
             <div>
                 <form onSubmit={this.addNewUser}>
                     <div>
-                        <input name="userName" type="text" placeholder="Name" onChange={this.handleNewUserChange} />
+                        <input name="username" type="text" onChange={this.handleNewUserChange} />
                     </div>
                     <div>
                         <input type="submit" value="Create New User" />
