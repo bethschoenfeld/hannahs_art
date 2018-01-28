@@ -23,24 +23,24 @@ router.post('/', async (req, res) => {
     }
 })
 
-// router.delete('/:userId', async (req, res) => {
-//     try {
-//         await User.findByIdeAndRemove(req.params.userId)
-//         res.sendStatus(200)
-//     } catch (err) {
-//         console.log(err)
-//         res.sendStatus(500)
-//     }
-// })
+router.delete('/:userId', async (req, res) => {
+    try {
+        await User.findByIdeAndRemove(req.params.userId)
+        res.sendStatus(200)
+    } catch (err) {
+        console.log(err)
+        res.sendStatus(500)
+    }
+})
 
-// router.patch('/:userId', async (req, res) => {
-//     try {
-//         const updatedIdea = await User.findByIdeAndUpdate(req.params.userId, req.body, { new: true })
-//         res.json(updateIdea)
-//     } catch (err) {
-//         console.log(err)
-//         res.sendStatus(500)
-//     }
-// })
+router.patch('/:userId', async (req, res) => {
+    try {
+        const updatedIdea = await User.findByIdeAndUpdate(req.params.userId, req.body, { new: true })
+        res.json(updateIdea)
+    } catch (err) {
+        console.log(err)
+        res.sendStatus(500)
+    }
+})
 
 module.exports = router
