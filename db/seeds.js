@@ -50,7 +50,7 @@ User.remove({})
                     artwork: 'https://i.imgur.com/aFdnMpW.jpg'
                 })
                 const juniperFlowerPicture = new Artwork({
-                    artwork: 'https://imgur.com/a/ssaak'
+                    artwork: 'https://i.imgur.com/PQ12T7f.jpg'
                 })
 
                 juniperContactInfo.artwork.push(juniperPicture, juniperFlowerPicture)
@@ -70,7 +70,7 @@ User.remove({})
                             artwork: 'https://i.imgur.com/UkXJPCX.jpg'
                         })
                         const danielHoodiePainting = new Artwork({
-                            artwork: 'https://imgur.com/a/7L3JE'
+                            artwork: 'https://i.imgur.com/QGooZxS.jpg'
                         })
                         danielContactInfo.artwork.push(danielArtwork, danielHoodiePainting)
                         daniel.contact.push(danielContactInfo)
