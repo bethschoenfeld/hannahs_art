@@ -31,7 +31,10 @@ User.remove({})
         const hannahPainting = new Artwork({
             artwork: 'https://i.imgur.com/i6ws4Yx.png'
         })
-        hannahContactInfo.artwork.push(hannahPainting)
+        const hannahCloudPainting = new Artwork({
+            artwork: 'https://i.imgur.com/3sCxKd4.png'
+        })
+        hannahContactInfo.artwork.push(hannahPainting, hannahCloudPainting)
         hannah.contact.push(hannahContactInfo)
         return hannah.save()
 
@@ -63,7 +66,7 @@ User.remove({})
                         const danielArtwork = new Artwork({
                             artwork: 'https://i.imgur.com/UkXJPCX.jpg'
                         })
-                        danielContactInfo.artwork.psuh(danielArtwork)
+                        danielContactInfo.artwork.push(danielArtwork)
                         daniel.contact.push(danielContactInfo)
 
                         return daniel.save()
