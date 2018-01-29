@@ -34,12 +34,10 @@ class Home extends Component {
   render() {
     return (
       <HomePageWrapper>
-        <div>
-          <h1>Welcome to Insta-Art!</h1>
-          <button type='button' onClick={() => this.props.push('/users')} >
-            Enter Site
-            </button>
-        </div>
+        <h1>Welcome to Insta-Art!</h1>
+        <button type='button' onClick={() => this.props.push('/users')} >
+          Enter Site
+        </button>
       </HomePageWrapper>
     )
   }
