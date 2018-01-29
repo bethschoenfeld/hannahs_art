@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { sendNewUserToDatabase } from '../actions/thunk.js'
+import styled from 'styled-components'
 
 class UserForm extends Component {
-    
     state = {
-        newUser: {
-            username: 'Orange'
+        newUserForm: {
         }
     }
 
@@ -12,33 +13,33 @@ class UserForm extends Component {
         const attributeName = event.target.name
         const attributeValue = event.target.value
 
-        const newUser = { ...this.state.newUser }
-        newUser[attributeName] = attributeValue
+        const newUserForm = { ...this.state.newUserForm }
+        newUserForm[attributeName] = attributeValue
 
-        this.setState({ newUser })
+        this.setState({ newUserForm })
     };
 
-    addNewUser = (event, props) => {
-        event.preventDefault()
-        this.props.createUser(this.state.newUser)
+    handleAddNewUser = () => {
+        this.props.sendNewUserToDatabase(this.state.newUserForm)
         this.setState({
-            newUser: {}
+            newUserForm: {
+                username: ""
+            }
         })
     };
 
     render() {
         return (
             <div>
-                <form onSubmit={this.addNewUser}>
-                    <div>
-                        <input name="username" type="text" onChange={this.handleNewUserChange} />
-                    </div>
-                    <div>
-                        <input type="submit" value="Create New User" />
-                    </div>
-                </form>
+                <input
+                    type="text"
+                    name="username"
+                    onChange={this.handleNewUserChange}
+                    value={this.state.newUserForm.username} />
+                <button onClick={this.handleAddNewUser}>Add User</button>
             </div>
         )
     }
 }
-export default UserForm
+
+export default connect(null, { sendNewUserToDatabase })(UserForm)

@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux'
-import userReducer from './userReducer'
+import userReducer from './userReducer.js'
 import {routerReducer} from 'react-router-redux' // we need this for react-router
 
 // Combine all reducers
