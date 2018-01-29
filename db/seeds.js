@@ -51,13 +51,14 @@ User.remove({})
                 juniper.contact.push(juniperContactInfo)
 
                 return juniper.save()
-                
+
                     .then(() => {
                         const daniel = new User({
                             username: 'Daniel'
                         })
                         const danielContactInfo = new Contact({
-                            website: 'https://www.danberberich.com/'
+                            website: 'https://www.danberberich.com/',
+                            instagram: '@danberberich/'
                         })
                         const danielArtwork = new Artwork({
                             artwork: 'https://i.imgur.com/UkXJPCX.jpg'
