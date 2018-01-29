@@ -15,7 +15,7 @@ const UserListWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 50px;
+    padding: 30px;
 }
 .username{ 
     font-size:28px;
