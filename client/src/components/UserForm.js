@@ -4,7 +4,18 @@ import { sendNewUserToDatabase } from '../actions/thunk.js'
 import styled from 'styled-components'
 
 const UserFormWrapper = styled.div`
-border: purple;
+    button{
+        background-color: #e7e7e7;
+        color: black;
+        border: 2px solid #e7e7e7;
+        font-size: 20px;
+        border-radius: 4px;
+    }
+
+    button:hover {
+        background-color: white;
+        color: black;
+        }
 `
 
 class UserForm extends Component {

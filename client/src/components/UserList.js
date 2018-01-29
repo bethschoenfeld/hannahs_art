@@ -6,14 +6,47 @@ import React, { Component } from 'react'
     import EditUserForm from './EditUserForm'
 
 const UserListWrapper = styled.div`
-    border: solid green 1px;
-    .userWrapper{
-        border: 1px solid cyan;
-        button{
+    border: solid black 1px;
+.userWrapper{
+    border: 1px solid black;
+    font-family: 'Raleway', serif;
+
+}
+.username{ 
+    font-size:28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+button{
         background-color: #e7e7e7;
         color: black;
         border: 2px solid #e7e7e7;
+        font-size: 16px;
+        border-radius: 4px;
+    }
+
+button:hover {
+        background-color: white;
+        color: black;
+    }
+.contact{
+    font-family: 'Raleway', serif;
+    font-size: 20px;
 }
+.email{
+font-family: 'Playfair Display', serif;
+}
+.instagram{
+font-family: 'Playfair Display', serif;
+}
+.website{
+font-family: 'Playfair Display', serif;
+}
+.artwork{
+    font-family: 'Raleway', serif;
+    font-size: 20px;
 }
 `
 class UserList extends Component {
@@ -26,7 +59,7 @@ class UserList extends Component {
                 {this.props.users.map((user, i) => {
                     return (
                         <div className="userWrapper" key={i}>
-                            <div className="">
+                            <div className="username">
                                 {user.username}
                             </div>
                             <button onClick={() => this.props.deleteUserFromDatabase(user)}>
@@ -37,27 +70,27 @@ class UserList extends Component {
                                 {user.contact.map((contact, i) => {
                                     return (
                                         <div key={i}>
-                                            <div className="">
+                                            <div className="contact">
                                                 Contact
                                             </div>
-                                            <div className="">
+                                            <div className="email">
                                                 {contact.email}
                                             </div>
-                                            <div className="">
+                                            <div className="instagram">
                                                 {contact.instagram}
                                             </div>
-                                            <div className="">
+                                            <div className="website">
                                                 {contact.website}
                                             </div>
-                                            <div className="">
+                                            <div>
                                                 {contact.artwork.map((artwork, i) => {
                                                     return (
                                                         <div key={i}>
-                                                            <div className="">
+                                                            <div className="artwork">
                                                                 Artwork
                                                             </div>
-                                                            <div className="">
-                                                                <img height="200px" src={artwork.artwork} alt="artwork" />
+                                                            <div className="picture">
+                                                                <img height="300px" src={artwork.artwork} alt="artwork" />
                                                             </div>
                                                         </div>
                                                     )

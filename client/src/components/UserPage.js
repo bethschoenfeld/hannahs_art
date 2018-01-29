@@ -8,18 +8,11 @@ const UserPageWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid blue;
+    border: 3px solid black;
     h1{ 
     font-family: 'Raleway', serif;
     }
 
-
-
-    /* {
-        background-color: #e7e7e7;
-        color: black;
-        border: 2px solid #e7e7e7;
-    } */
 `
 class UserPage extends Component {
     render() {

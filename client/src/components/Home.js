@@ -9,9 +9,11 @@ const HomePageWrapper = styled.div`
     align-items: center;
     justify-content: center;
     height: 100vh;
+    border: 3px solid black;
 
     h1{ 
     font-family: 'Raleway', serif;
+    font-size: 52px;
 
     }
 
@@ -19,10 +21,13 @@ const HomePageWrapper = styled.div`
         background-color: #e7e7e7;
         color: black;
         border: 2px solid #e7e7e7;
+        font-size: 20px;
+        border-radius: 4px;
     }
 
     button:hover {
         background-color: white;
+        color: black;
         }
 `
 class Home extends Component {

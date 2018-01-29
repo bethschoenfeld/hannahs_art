@@ -57,7 +57,7 @@ User.remove({})
 
                     .then(() => {
                         const daniel = new User({
-                            username: 'Daniel'
+                            username: 'Dan'
                         })
                         const danielContactInfo = new Contact({
                             website: 'https://www.danberberich.com/',
