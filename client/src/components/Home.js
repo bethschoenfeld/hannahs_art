@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import {connect} from 'react-redux'
-import {push} from 'react-router-redux'
+import { connect } from 'react-redux'
+import { push } from 'react-router-redux'
 
 const HomePageWrapper = styled.div`
     display: flex;
@@ -18,15 +18,15 @@ const HomePageWrapper = styled.div`
     }
 
     button{
-        background-color: #e7e7e7;
-        color: black;
-        border: 2px solid #e7e7e7;
+        background-color: #555555;
+        color: white;
+        border: 2px solid #555555;
         font-size: 20px;
         border-radius: 4px;
     }
 
     button:hover {
-        background-color: white;
+        background-color: #e7e7e7;
         color: black;
         }
 `
@@ -35,13 +35,13 @@ class Home extends Component {
     return (
       <HomePageWrapper>
         <div>
-          <h1>Welcome!</h1>
-            <button type='button' onClick={() => this.props.push('/users')} >
-              Enter Site
+          <h1>Welcome to Insta-Art!</h1>
+          <button type='button' onClick={() => this.props.push('/users')} >
+            Enter Site
             </button>
         </div>
       </HomePageWrapper>
     )
   }
 }
-export default connect(null, {push})(Home)
+export default connect(null, { push })(Home)

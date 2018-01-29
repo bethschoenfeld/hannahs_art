@@ -4,7 +4,9 @@ import { editUserInDatabase } from '../actions/thunk.js'
 import styled from 'styled-components'
 
 const EditFormWrapper = styled.div`
-border: orange;
+.editUser{
+  height: 20px;
+}
 `
 
 class EditUserForm extends Component {
@@ -32,6 +34,7 @@ class EditUserForm extends Component {
       <EditFormWrapper>
         <div>
           <input
+            className="editUser"
             type="text"
             name="username"
             onChange={this.handleChange}

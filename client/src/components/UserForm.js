@@ -5,17 +5,20 @@ import styled from 'styled-components'
 
 const UserFormWrapper = styled.div`
     button{
-        background-color: #e7e7e7;
-        color: black;
-        border: 2px solid #e7e7e7;
+        background-color: #555555;
+        color: white;
+        border: 2px solid #555555;
         font-size: 20px;
         border-radius: 4px;
     }
 
     button:hover {
-        background-color: white;
+        background-color: #e7e7e7;
         color: black;
         }
+    .newUser{ 
+        height: 20px;
+    }
 `
 
 class UserForm extends Component {
@@ -47,6 +50,7 @@ class UserForm extends Component {
         return (
             <UserFormWrapper>
                 <input
+                    className="newUser"
                     type="text"
                     name="username"
                     onChange={this.handleNewUserChange}
