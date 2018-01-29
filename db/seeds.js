@@ -51,7 +51,22 @@ User.remove({})
                 juniper.contact.push(juniperContactInfo)
 
                 return juniper.save()
+                
+                    .then(() => {
+                        const daniel = new User({
+                            username: 'Daniel'
+                        })
+                        const danielContactInfo = new Contact({
+                            website: 'https://www.danberberich.com/'
+                        })
+                        const danielArtwork = new Artwork({
+                            artwork: 'https://i.imgur.com/UkXJPCX.jpg'
+                        })
+                        danielContactInfo.artwork.psuh(danielArtwork)
+                        daniel.contact.push(danielContactInfo)
 
+                        return daniel.save()
+                    })
             })
     }).catch((error) => {
         console.log('Error saving seeded data!')
