@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
-import { getUserRoute } from '../actions/thunk.js'
+import { getUserRoute, deleteUserFromDatabase } from '../actions/thunk.js'
 
 
 const UserListWrapper = styled.div`
@@ -32,6 +32,9 @@ class UserList extends Component {
               <div>
                 {user.username}
               </div>
+              <button onClick={() => this.props.deleteUserFromDatabase(user)}>
+                Delete
+              </button>
             </UserWrapper>
           )
         })
@@ -43,4 +46,4 @@ class UserList extends Component {
 const mapStateToProps = (state) => {
   return { users: state.users }
 }
-export default connect(mapStateToProps, { push, getUserRoute })(UserList)
+export default connect(mapStateToProps, { push, getUserRoute, deleteUserFromDatabase })(UserList)

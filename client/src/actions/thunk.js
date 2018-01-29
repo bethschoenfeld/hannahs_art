@@ -26,3 +26,18 @@ export function sendNewUserToDatabase(newUserInfo) {
     })
   }
 }
+
+
+
+export function deleteUserFromState(userToDeleteId) {
+  return {type: 'DELETE_USER', userToDeleteId}
+}
+
+export function deleteUserFromDatabase(userToDeleteFromDatabase) {
+  return function (dispatch) {
+    return axios.delete(`/api/users/${userToDeleteFromDatabase._id}`)
+    .then((response) => {
+      dispatch(deleteUserFromState(userToDeleteFromDatabase._id))
+    })
+  }
+}
