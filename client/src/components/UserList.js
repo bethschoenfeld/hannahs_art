@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
 import { getUserRoute, deleteUserFromDatabase } from '../actions/thunk.js'
-
+import EditUserForm from './EditUserForm'
 
 const UserListWrapper = styled.div`
     border: solid green 1px;
@@ -35,6 +35,7 @@ class UserList extends Component {
               <button onClick={() => this.props.deleteUserFromDatabase(user)}>
                 Delete
               </button>
+              <EditUserForm user={user}/>
             </UserWrapper>
           )
         })

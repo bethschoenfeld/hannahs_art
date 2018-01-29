@@ -3,6 +3,10 @@ import { connect } from 'react-redux'
 import { sendNewUserToDatabase } from '../actions/thunk.js'
 import styled from 'styled-components'
 
+const UserFormWrapper = styled.div`
+border: purple;
+`
+
 class UserForm extends Component {
     state = {
         newUserForm: {
@@ -30,14 +34,14 @@ class UserForm extends Component {
 
     render() {
         return (
-            <div>
+            <UserFormWrapper>
                 <input
                     type="text"
                     name="username"
                     onChange={this.handleNewUserChange}
                     value={this.state.newUserForm.username} />
                 <button onClick={this.handleAddNewUser}>Add User</button>
-            </div>
+            </UserFormWrapper>
         )
     }
 }

@@ -27,7 +27,18 @@ export function sendNewUserToDatabase(newUserInfo) {
   }
 }
 
+export function editedUserToState(editedUserData) {
+  return {type: 'EDIT_USER', editedUserData}
+}
 
+export function editUserInDatabase(editedUserInfo) {
+  return function (dispatch) {
+    return axios.patch(`/api/users/${editedUserInfo.id}`, editedUserInfo)
+    .then((response) => {
+      dispatch(editedUserToState(editedUserInfo))
+    })
+  }
+}
 
 export function deleteUserFromState(userToDeleteId) {
   return {type: 'DELETE_USER', userToDeleteId}
